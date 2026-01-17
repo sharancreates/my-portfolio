@@ -9,7 +9,7 @@ const Name = () => {
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className='flex-1 text-center md:text-left z-10'>
                 <h1 className='font-extrabold text-6xl md:text-8xl lg:text-9xl leading-tight tracking-tighter cursor-default'>
                     HI, I AM <br/>
-                    <span className='text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 hover:from-[#70A9A1] hover:to-[#4b7a74] transition-all duration-500 ease-in-out'>
+                    <span className='text-[#A1E3F9] '>
                         SHARANYA
                     </span>
                 </h1>

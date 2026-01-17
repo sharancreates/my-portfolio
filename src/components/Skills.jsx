@@ -36,17 +36,17 @@ const Skills = () => {
                 <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#0d1117] to-transparent z-10 pointer-events-none" />
 
                 {/* ROW 1: Moving Left */}
-                <MarqueeRow items={skillsData} direction="left" speed={25} />
+                <MarqueeRow items={skillsData} direction="left" speed={50} />
 
                 {/* ROW 2: Moving Right (Slightly slower/faster for organic feel) */}
-                <MarqueeRow items={skillsData.slice().reverse()} direction="right" speed={30} />
+                <MarqueeRow items={skillsData.slice().reverse()} direction="right" speed={50} />
             </div>
         </div>
     )
 }
 
 // Reusable Sub-Component for a single row
-const MarqueeRow = ({ items, direction = "left", speed = 100 }) => {
+const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
     return (
         <div className='flex overflow-hidden group'>
             <motion.div 
@@ -54,7 +54,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 100 }) => {
                 initial={{ x: direction === "left" ? "0%" : "-100%" }}
                 animate={{ x: direction === "left" ? "-100%" : "0%" }}
                 transition={{ 
-                    duration: 25, 
+                    duration: 45, 
                     ease: "linear", 
                     repeat: Infinity 
                 }}
