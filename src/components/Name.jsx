@@ -4,7 +4,7 @@ import meImg from '../assets/me.png'
 
 const Name = () => {
   return (
-    <div className='min-h-[80vh] flex items-center justify-center bg-[#0d1117] text-white overflow-hidden px-10'>
+    <div className='min-h-screen flex items-center justify-center bg-[#0d1117] text-white overflow-hidden px-10'>
         <div className='flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-6xl gap-10'>
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className='flex-1 text-center md:text-left z-10'>
                 <h1 className='font-extrabold text-6xl md:text-8xl lg:text-9xl leading-tight tracking-tighter cursor-default'>

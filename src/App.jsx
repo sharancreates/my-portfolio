@@ -4,6 +4,7 @@ import Name from './components/Name'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (

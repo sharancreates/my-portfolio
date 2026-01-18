@@ -2,61 +2,37 @@ import React from 'react'
 import { motion } from "motion/react"
 import { ExternalLink, Github } from 'lucide-react'
 
-// --- SAMPLE DATA ---
-// Replace these placeholder images with screenshots of your actual work.
-// You can place your images in the /assets folder and import them.
 const projectsData = [
     {
         id: 1,
-        title: "E-Commerce Dashboard",
-        description: "A full-stack admin dashboard with real-time data visualization, inventory management, and order tracking. Built with scalability in mind.",
-        image: "https://placehold.co/600x400/161b22/70A9A1?text=E-Com+Dashboard", 
-        tech: ["React", "Node.js", "MongoDB", "Tailwind"],
+        title: "AROGYA",
+        description: "A hospital management system with role based access over admin, patient and doctors with dynamic appointment management.",
+        image: "https://placehold.co/600x400/161b22/70A9A1?text=Hospital+Management+System", 
+        tech: ["Flask", "Jinja2", "SQLite", "Vanilla CSS"],
         liveLink: "#",
         githubLink: "#"
     },
     {
         id: 2,
-        title: "AI Image Generator SaaS",
-        description: "An application allowing users to generate images using Open AI's DALL-E API. Features user authentication and a credit system.",
-        image: "https://placehold.co/600x400/161b22/70A9A1?text=AI+Generator",
-        tech: ["Next.js", "TypeScript", "OpenAI API", "Prisma"],
-        liveLink: "#",
-        githubLink: "#"
-    },
-    {
-        id: 3,
-        title: "Crypto Portfolio Tracker",
-        description: "A responsive web app to track cryptocurrency holdings. Fetches real-time price data from CoinGecko API with interactive charts.",
-        image: "https://placehold.co/600x400/161b22/70A9A1?text=Crypto+Tracker",
-        tech: ["React", "Chart.js", "Framer Motion", "API"],
-        liveLink: "#",
-        githubLink: "#"
-    },
-    {
-        id: 4,
-        title: "Social Media Automation Bot",
-        description: "A Python script that automates interactions on social platforms to grow engagement organically based on hashtags and user targeting.",
-        image: "https://placehold.co/600x400/161b22/70A9A1?text=Python+Bot",
-        tech: ["Python", "Selenium", "Pandas"],
+        title: "ResuMatch AI",
+        description: "A Python script that matches job description and your resume to give the ATS score using hybrid technology.",
+        image: "https://placehold.co/600x400/161b22/70A9A1?text=ResuMatch+AI",
+        tech: ["Python", "React.js", "sentence-transformers"],
         liveLink: "#",
         githubLink: "#"
     },
 ]
 
-// --- ANIMATION VARIANTS ---
-// The container controls the staggering of children
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.3 // Delay between each card appearing
+            staggerChildren: 0.3 
         }
     }
 }
 
-// How each individual card enters the screen
 const cardVariants = {
     hidden: { y: 50, opacity: 0 },
     visible: { 
@@ -71,8 +47,7 @@ const Projects = () => {
   return (
     <section className="bg-[#0d1117] py-24 px-6" id="projects">
         <div className="max-w-6xl mx-auto">
-            
-            {/* Section Title */}
+
             <motion.div 
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +67,7 @@ const Projects = () => {
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }} // Starts animating when 20% visible
+                viewport={{ once: true, amount: 0.2 }}
             >
                 {projectsData.map((project) => (
                     <ProjectCard key={project.id} project={project} />
@@ -103,12 +78,9 @@ const Projects = () => {
   )
 }
 
-// --- SINGLE PROJECT CARD COMPONENT ---
 const ProjectCard = ({ project }) => {
     return (
-        <motion.div 
-            variants={cardVariants}
-            whileHover={{ y: -10 }} // Lift effect on hover
+        <motion.div variants={cardVariants} whileHover={{ y: -10 }} // Lift effect on hover
             className="group relative bg-[#161b22] rounded-2xl overflow-hidden border border-gray-800 hover:border-[#70A9A1]/50 transition-colors duration-500 shadow-lg"
         >
             {/* Image Container with Overflow Hidden for Zoom Effect */}
